@@ -15,6 +15,8 @@
 #ifndef RCLCPP__NODE_INTERFACES__NODE_BASE_INTERFACE_HPP_
 #define RCLCPP__NODE_INTERFACES__NODE_BASE_INTERFACE_HPP_
 
+#include <atomic>
+#include <functional>
 #include <memory>
 #include <mutex>
 #include <string>
@@ -26,6 +28,7 @@
 #include "rclcpp/context.hpp"
 #include "rclcpp/guard_condition.hpp"
 #include "rclcpp/macros.hpp"
+#include "rclcpp/node_interfaces/detail/node_interfaces_helpers.hpp"
 #include "rclcpp/visibility_control.hpp"
 
 namespace rclcpp
@@ -176,5 +179,7 @@ public:
 
 }  // namespace node_interfaces
 }  // namespace rclcpp
+
+RCLCPP_NODE_INTERFACE_HELPERS_SUPPORT(rclcpp::node_interfaces::NodeBaseInterface, base)
 
 #endif  // RCLCPP__NODE_INTERFACES__NODE_BASE_INTERFACE_HPP_
